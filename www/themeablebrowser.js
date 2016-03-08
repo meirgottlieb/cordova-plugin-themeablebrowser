@@ -85,16 +85,16 @@ ThemeableBrowser.prototype = {
     //Gets cookie by Domain from the inAppWebView and adds it to the cordovaWebView.
     getCookies: function(cookieDetails, cb) {
         if(cookieDetails.url) {
-            exec(cb, null, "InAppBrowser", "getCookies", [cookieDetails.url, !!cb])
+            exec(cb, null, "ThemeableBrowser", "getCookies", [cookieDetails.url, !!cb])
         } else {
             throw new Error('getCookie requires a url to be specified')
         }
     },
 
     //Gets cookie by Domain from the cordovaWebView and adds it to the inAppWebView.
-    setCookies: function(cookieDtails, cb) {
+    setCookies: function(cookieDetails, cb) {
         if(cookieDetails.url) {
-            exec(cb, null, "InAppBrowser", "setCookies", [cookieDetails.url, !!cb])
+            exec(cb, null, "ThemeableBrowser", "setCookies", [cookieDetails.url, !!cb])
         } else {
             throw new Error('setCookie requires a url to be specified')
         }
